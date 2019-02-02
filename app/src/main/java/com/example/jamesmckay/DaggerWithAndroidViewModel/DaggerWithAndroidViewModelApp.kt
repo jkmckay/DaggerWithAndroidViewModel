@@ -19,7 +19,7 @@ class DaggerWithAndroidViewModelApp : Application(), HasActivityInjector {
         super.onCreate()
 
     }
-
+    //dispatchingAndroidInjector for the app's activities.
     override fun activityInjector(): DispatchingAndroidInjector<Activity> {
         return dispatchingAndroidInjector
     }
@@ -32,11 +32,10 @@ class DaggerWithAndroidViewModelApp : Application(), HasActivityInjector {
             .build()
             .inject(this)
 
-
         registerActivityLifecycleCallbacks(object : AbstractActivityLifecycleCallbacks() {
+            //        on activity created inject this activity with its dependencies
             override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
-                /** on activity created inject this activity w/ its dependencies. **/
-//                if (activity is HasSupportFragmentInjector) {
+      //                if (activity is HasSupportFragmentInjector) {
                     AndroidInjection.inject(activity)
 
 //                }

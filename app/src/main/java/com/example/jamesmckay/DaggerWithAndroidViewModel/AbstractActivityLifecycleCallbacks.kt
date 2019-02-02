@@ -9,6 +9,7 @@ import android.os.Bundle
  * Purpose of this class is to remove boilerplate code & streamline
  * our implementation of Google's LifeCycle-aware components
  */
+//In addition this assists in minimizing Dagger's ActivityInjection boilerplate.
 abstract class AbstractActivityLifecycleCallbacks: Application.ActivityLifecycleCallbacks {
     override fun onActivityPaused(activity: Activity?) {
     }

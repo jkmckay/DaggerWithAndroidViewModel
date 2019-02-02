@@ -52,5 +52,19 @@ The `@Component` annotation is applied to interfaces to create groups of related
 
 
 
-## Architecture Component specific implementation
+## Android specific implementation
+
+#### AndroidInjector
+
+Performs the members-injection for concrete "core Android classes" such as Activities, Fragments, etc.
+
+#### AndroidInjector.Factory
+
+Creates AndroidInjectors for concrete "core Android classes" such as Activities, Fragments, etc.
+
+####DispatchingAndroidInjector
+
+DispatchingAndroidInjector is used to provide dependencies for Android components such as Activities and fragments
+that are instantiated by the Android framework and not by Dagger.
+It works this out via a mapping of each concrete classes to a specific `AndroidInjector` of that class. This mapping is passed  to a `AndroidInjector.Factory` which the `DispatchingAndroidInjector` relies upon.
 

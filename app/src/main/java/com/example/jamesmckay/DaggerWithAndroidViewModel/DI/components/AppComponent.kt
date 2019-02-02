@@ -19,7 +19,6 @@ import javax.inject.Singleton
 )
 
 interface AppComponent {
-
     /*
        @Component.Builder annotation allows one to specify a interface to be built as a component via its generated builder.
         There are a few ways of going about this. Cmd+click to read about its rules.
@@ -27,20 +26,14 @@ interface AppComponent {
     @Component.Builder
     interface Builder {
         /*
-@BindsInstance annotation allows a method belonging to a '@Component.Builder' annotated interface to bind an instance to a type within the component.
-Which in this case means that we can bind an instance of 'Application' to this builder. this instance can then be injected within the component.
-        */
-        @BindsInstance
-        fun application(app: Application): Builder
-        fun build(): AppComponent
-
-        /*
-        Normally you can instantiate your component with `DaggerYourComponent.create()`
-        But now that your component has modules, you'll need to call this builder instead.
+        @BindsInstance annotation allows a method belonging to a '@Component.Builder' annotated interface to bind an instance to a type within the component.
+        Which in this case means that we can bind an instance of 'Application' to this builder. this instance can then be injected within the component.
          */
+        @BindsInstance
+        fun application(app: Application): Builder //pass application to app component.
+        fun build(): AppComponent
     }
-
-    //class that needs the dependencies
+    //passes app instance and provides the app's and any of its members' dependencies via the dispatchingAndroidInjector.
     fun inject(app: DaggerWithAndroidViewModelApp)
 }
 
