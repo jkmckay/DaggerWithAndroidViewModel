@@ -13,14 +13,8 @@ import kotlin.reflect.KClass
 @Module
 abstract class ViewModelModule {
 
-    /*
-    Binds is a replacement for `@Provides`. You use @Binds instead of provides
-    when you do not need to specify the exact implementation.
-    The Binds method can only have a single parameter whose type is assignable to the return type.
-     */
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
-
 
     @Binds
     @IntoMap
@@ -30,5 +24,4 @@ abstract class ViewModelModule {
 }
 
 @MapKey
-//TODO: Explain mapKey
 annotation class ViewModelKey(val value: KClass<out ViewModel>)

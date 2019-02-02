@@ -1,7 +1,7 @@
 package com.example.jamesmckay.DaggerWithAndroidViewModel.DI.components
 
 import android.app.Application
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.ActivityBuilderModule
+import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.ActivityModule
 import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.AppModule
 import com.example.jamesmckay.DaggerWithAndroidViewModel.DaggerWithAndroidViewModelApp
 import dagger.BindsInstance
@@ -14,7 +14,7 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
-        ActivityBuilderModule::class
+        ActivityModule::class
     ]
 )
 

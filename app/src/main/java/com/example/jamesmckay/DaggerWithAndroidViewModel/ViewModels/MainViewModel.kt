@@ -5,7 +5,7 @@ import com.example.jamesmckay.DaggerWithAndroidViewModel.Model.TestRepositoryA
 import com.example.jamesmckay.DaggerWithAndroidViewModel.Model.TestRepositoryB
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(val dependencyA: TestRepositoryA, val dependencyB: TestRepositoryB): ViewModel(){
+class MainViewModel @Inject constructor(private val dependencyA: TestRepositoryA, private val dependencyB: TestRepositoryB): ViewModel(){
 
 
 fun getMessages(){

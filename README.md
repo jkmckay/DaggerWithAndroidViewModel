@@ -46,6 +46,11 @@ class RepositoryModule {
 }
 ```
 
+#### Binds
+
+The `@Binds` annotation is a replacement for `@Provides`. You use this instead of `@provides`
+when you do not need to specify the exact implementation. The Binds method can only have a single parameter whose type is assignable to the return type. It essentially returns the injected parameter.
+
 #### Components:
 
 The `@Component` annotation is applied to interfaces to create groups of related dependencies. That is to say a component is made up of 1..* modules or components. For example one might have a CreatureComponent that may include a WarmBloodedComponent which may include Avian and Mammal modules as well as a ColdBloodedComponent that may include a Reptile and Amphibian Modules.
@@ -68,3 +73,14 @@ DispatchingAndroidInjector is used to provide dependencies for Android component
 that are instantiated by the Android framework and not by Dagger.
 It works this out via a mapping of each concrete classes to a specific `AndroidInjector` of that class. This mapping is passed  to a `AndroidInjector.Factory` which the `DispatchingAndroidInjector` relies upon.
 
+#### ContributesAndroidInjector
+
+The `@ContributesAndroidInjector` annotation is used to generate an `AndroidInjector` for the method's return type. The `AndroidInjector` is implemented with a Subcomponent and will be a child of the module's component.
+
+For example if one is providing a `HomeActivity` as part of an `ActivityModule`, which is part of a `AppComponent`. Using `@ContributesAndroidInjector` will net the following:
+
+* AppComponent : `Component`
+  * AndroidInjectorSubComponent : `SubComponent`
+    * HomeActivity's AndroidInjector: `AndroidInjector`
+  * ActivityModule: `Module`
+    * HomeActivity: `Activity`
