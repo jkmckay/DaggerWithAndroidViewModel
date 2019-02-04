@@ -1,6 +1,6 @@
-#DaggerWithAndroidViewModel
+# DaggerWithAndroidViewModel
 
-The following presumes a usage of Android Architecture components in addition to Dagger2
+The following presumes a familiarity of Android Architecture components in addition to Dagger2
 
 #### Modules:
 
@@ -67,7 +67,7 @@ Performs the members-injection for concrete "core Android classes" such as Activ
 
 Creates AndroidInjectors for concrete "core Android classes" such as Activities, Fragments, etc.
 
-####DispatchingAndroidInjector
+#### DispatchingAndroidInjector
 
 DispatchingAndroidInjector is used to provide dependencies for Android components such as Activities and fragments
 that are instantiated by the Android framework and not by Dagger.
