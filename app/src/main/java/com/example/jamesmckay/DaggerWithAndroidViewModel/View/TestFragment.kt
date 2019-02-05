@@ -1,8 +1,8 @@
 package com.example.jamesmckay.DaggerWithAndroidViewModel.View
 
-import androidx.fragment.app.Fragment
+import dagger.android.DaggerFragment
 
-class TestFragment : Fragment() {
+class TestFragment : DaggerFragment() {
 
 
 }
