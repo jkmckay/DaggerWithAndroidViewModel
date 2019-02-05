@@ -2,6 +2,8 @@
 
 The following presumes a familiarity of Android Architecture components in addition to Dagger2
 
+
+
 #### Modules:
 
 Module classes denote what it is you're injecting and are essentially made up of a number of  "provide methods" that create and return the dependency to be injected. To create a module class one simply annotates with `@Module` or if submodules are to be included, you can include them like so:
@@ -55,8 +57,6 @@ when you do not need to specify the exact implementation. The Binds method can o
 
 The `@Component` annotation is applied to interfaces to create groups of related dependencies. That is to say a component is made up of 1..* modules or components. For example one might have a CreatureComponent that may include a WarmBloodedComponent which may include Avian and Mammal modules as well as a ColdBloodedComponent that may include a Reptile and Amphibian Modules.
 
-
-
 ## Android specific implementation
 
 #### AndroidInjector
@@ -84,3 +84,58 @@ For example if one is providing a `HomeActivity` as part of an `ActivityModule`,
     * HomeActivity's AndroidInjector: `AndroidInjector`
   * ActivityModule: `Module`
     * HomeActivity: `Activity`
+
+
+
+##Why is this better?
+
+####Classes don't have to care about how they are injected.
+
+One of the core principles of Dependency Injection is that "a class shouldn’t know anything about how it is injected". Which, with previous implementations of Dagger was a principle that wasn't followed as strictly. For example, the below was a common pattern.
+
+```kotlin
+  (application as MyApplication)
+        .getAppComponent()
+        .mainActivity( MainActivityModule(userId))
+        .build()
+        .inject(this)
+```
+
+Now dependencies can be injected without caring how they are satisfied as this work is now kept out of the dependent classes.
+
+####Less boilerplate
+
+- Dagger-Android requires you to create separate sub-components for you Android core classes (activities,fragments,services, etc). `@ContributesAndroidInjector` removes that boilerplate.
+
+**Previously**:
+
+- AppComponent
+  - AppModule
+    - MainActivitySubComponent
+      - MainActivityModule
+    - DetailActivitySubComponent
+      - DetailActivityModule
+  - ActivityModule
+    - MainActivity
+    - DetailActivity
+  - AndroidInjectionModule
+
+**With `@ContributesAndroidInjector`:**
+
+- AppComponent
+  - AppModule
+  - ActivityModule
+    - MainActivityModule (annotated with @ContributesAndroidInjecto)
+    - DetailActivityModule (annotated with @ContributesAndroidInjecto)
+  - AndroidInjectionModule
+
+Additionally Using `DaggerApplication` and its associated classes further removes the need from boilerplate, especially from the Application class. as can be seen in the `TODO` build variant.
+
+###Sources 
+
+####[Mert Şimşek](https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe)
+
+####[Dagger & Android](https://google.github.io/dagger/android.html)
+
+####[Dagger Dependency Injection API](https://google.github.io/dagger/api/2.12/overview-summary.html)
+
