@@ -5,6 +5,6 @@ import android.util.Log
 class TestRepositoryA {
 
     fun printMessage(){
-        Log.d("JKM",javaClass.canonicalName)
+        Log.d("NoDaggerCore",javaClass.canonicalName)
     }
 }
