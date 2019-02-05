@@ -103,7 +103,7 @@ One of the core principles of Dependency Injection is that "a class shouldn’t 
 
 Now dependencies can be injected without caring how they are satisfied as this work is now kept out of the dependent classes.
 
-####Less boilerplate
+#### Less boilerplate
 
 - Dagger-Android requires you to create separate sub-components for you Android core classes (activities,fragments,services, etc). `@ContributesAndroidInjector` removes that boilerplate.
 
