@@ -1,15 +1,10 @@
 package com.example.jamesmckay.DaggerWithAndroidViewModel.View
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.jamesmckay.DaggerWithAndroidViewModel.R
 import com.example.jamesmckay.DaggerWithAndroidViewModel.ViewModels.MainViewModel
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
