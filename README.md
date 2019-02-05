@@ -87,9 +87,9 @@ For example if one is providing a `HomeActivity` as part of an `ActivityModule`,
 
 
 
-##Why is this better?
+## Why is this better?
 
-####Classes don't have to care about how they are injected.
+#### Classes don't have to care about how they are injected.
 
 One of the core principles of Dependency Injection is that "a class shouldn’t know anything about how it is injected". Which, with previous implementations of Dagger was a principle that wasn't followed as strictly. For example, the below was a common pattern.
 
@@ -131,11 +131,11 @@ Now dependencies can be injected without caring how they are satisfied as this w
 
 Additionally Using `DaggerApplication` and its associated classes further removes the need from boilerplate, especially from the Application class. as can be seen in the `TODO` build variant.
 
-###Sources 
+### Sources 
 
-####[Mert Şimşek](https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe)
+#### [Mert Şimşek](https://medium.com/@iammert/new-android-injector-with-dagger-2-part-1-8baa60152abe)
 
-####[Dagger & Android](https://google.github.io/dagger/android.html)
+#### [Dagger & Android](https://google.github.io/dagger/android.html)
 
-####[Dagger Dependency Injection API](https://google.github.io/dagger/api/2.12/overview-summary.html)
+#### [Dagger Dependency Injection API](https://google.github.io/dagger/api/2.12/overview-summary.html)
 
