@@ -20,6 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions "version"
+    productFlavors {
+        noDaggerCore {
+            dimension "version"
+            versionNameSuffix "-noDaggerCore"
+            applicationIdSuffix ".noDaggerCore"
+        }
+
+        daggerCore {
+            dimension "version"
+            versionNameSuffix "-daggerCore"
+            applicationIdSuffix ".daggerCore"
+
+        }
+    }
 }
 
 dependencies {
