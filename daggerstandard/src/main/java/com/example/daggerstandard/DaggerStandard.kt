@@ -1,4 +1,4 @@
-package com.example.jamesmckay.DaggerWithAndroidViewModel
+package com.example.daggerstandard
 
 import android.app.Activity
 import android.app.Application
@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.daggerstandard.AbstractActivityLifecycleCallbacks
 import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.components.DaggerAppComponent
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
@@ -14,7 +15,7 @@ import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
-class DaggerWithAndroidViewModelApp : Application(), HasActivityInjector {
+class DaggerStandard : Application(), HasActivityInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>

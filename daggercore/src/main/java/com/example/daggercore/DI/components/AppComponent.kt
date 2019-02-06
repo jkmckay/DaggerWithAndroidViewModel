@@ -1,8 +1,8 @@
-package com.example.jamesmckay.DaggerWithAndroidViewModel.DI.components
+package com.example.daggercore.DI.components
 
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.ActivityModule
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.AppModule
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DaggerWithAndroidViewModelApp
+import com.example.daggercore.DI.Modules.ActivityModule
+import com.example.daggercore.DI.Modules.AppModule
+import com.example.daggercore.DaggerCore
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -17,7 +17,7 @@ import javax.inject.Singleton
     ]
 )
 
-interface AppComponent: AndroidInjector<DaggerWithAndroidViewModelApp> {
+interface AppComponent: AndroidInjector<DaggerCore> {
     @Component.Builder
-    abstract class Builder : AndroidInjector.Builder<DaggerWithAndroidViewModelApp>()
+    abstract class Builder : AndroidInjector.Builder<DaggerCore>()
 }

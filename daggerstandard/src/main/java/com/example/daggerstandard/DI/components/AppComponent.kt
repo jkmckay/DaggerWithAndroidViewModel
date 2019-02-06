@@ -1,9 +1,9 @@
-package com.example.jamesmckay.DaggerWithAndroidViewModel.DI.components
+package com.example.daggerstandard.DI.components
 
 import android.app.Application
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.ActivityModule
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.Modules.AppModule
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DaggerWithAndroidViewModelApp
+import com.example.daggerstandard.DI.Modules.ActivityModule
+import com.example.daggerstandard.DI.Modules.AppModule
+import com.example.daggerstandard.DaggerStandard
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -34,6 +34,6 @@ interface AppComponent {
         fun build(): AppComponent
     }
     //passes app instance and provides the app's and any of its members' dependencies via the dispatchingAndroidInjector.
-    fun inject(app: DaggerWithAndroidViewModelApp)
+    fun inject(app: DaggerStandard)
 }
 
