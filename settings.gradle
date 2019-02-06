@@ -1,2 +1,2 @@
-include ':app'
+include ':daggercore', ':daggerstandard'
 rootProject.name = 'DaggerWithAndroidViewModel'
