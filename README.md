@@ -129,7 +129,7 @@ Now dependencies can be injected without caring how they are satisfied as this w
     - DetailActivityModule (annotated with @ContributesAndroidInjecto)
   - AndroidInjectionModule
 
-Additionally Using `DaggerApplication` and its associated classes further removes the need from boilerplate, especially from the Application class. as can be seen in the `TODO` build variant.
+Additionally Using `DaggerApplication` and its associated classes further removes the need from boilerplate, especially from the Application class. as can be seen in the DaggerCore module.
 
 ### Sources 
 
