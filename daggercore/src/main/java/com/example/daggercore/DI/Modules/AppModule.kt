@@ -1,0 +1,19 @@
+package com.example.daggercore.DI.Modules
+
+
+import android.content.Context
+import dagger.Module
+import dagger.Provides
+import dagger.android.support.DaggerApplication
+import javax.inject.Singleton
+
+@Module(includes = [ViewModelModule::class, TestDependenciesModule::class])
+
+class AppModule {
+// ApplicationContext is not required for this project, this is here just as an example.
+    @Singleton
+    @Provides
+    fun provideApplicationContext(app: DaggerApplication): Context {
+        return app.applicationContext
+    }
+}
