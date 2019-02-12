@@ -7,14 +7,16 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class TestDependenciesModule{
+object TestDependenciesModule{
 
     @Singleton
     @Provides
+    @JvmStatic
      fun provideTestRepoA(): TestRepositoryA = TestRepositoryA()
 
     @Singleton
     @Provides
+    @JvmStatic
      fun provideTestRepoB(): TestRepositoryB = TestRepositoryB()
 
 }

@@ -1,10 +1,11 @@
 package com.example.daggercore.Model
 
 import android.util.Log
+import javax.inject.Inject
 
-class TestRepositoryB {
+class TestRepositoryB @Inject constructor() {
 
-    fun printMessage(){
-        Log.d("DaggerCore",javaClass.canonicalName)
+    fun printMessage() {
+        Log.d("DaggerCore", javaClass.canonicalName)
     }
 }

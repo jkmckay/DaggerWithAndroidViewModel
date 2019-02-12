@@ -6,8 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.daggerstandard.AbstractActivityLifecycleCallbacks
-import com.example.jamesmckay.DaggerWithAndroidViewModel.DI.components.DaggerAppComponent
+import com.example.daggerstandard.DI.components.DaggerAppComponent
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
