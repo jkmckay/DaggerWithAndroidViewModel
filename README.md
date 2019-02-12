@@ -2,7 +2,7 @@
 
 The following presumes a familiarity of Android Architecture components in addition to Dagger2
 
-Note: This project contains two modules; `DaggerCore` and `DaggerStandard`. `DaggerStandard` is best used with this readme and illustrates how Dagger works and how to use it. `DaggerCore` in constrast shows the cutdown version using the new DaggerAndroidCore classes: `DaggerApplication`, `DaggerActivity` , `DaggerFragment`, etc which cuts out boilerplate code even further, but provides less insight for new users.
+Note: This project contains two modules(project modules, not dagger modules): `DaggerCore` and `DaggerStandard`. `DaggerStandard` is best used with this readme and illustrates how Dagger works and how to use it. `DaggerCore` in constrast shows the cutdown version using the new DaggerAndroidCore classes: `DaggerApplication`, `DaggerActivity` , `DaggerFragment`, etc which cuts out boilerplate code even further, but provides less insight for new users.
 
 #### Modules:
 
