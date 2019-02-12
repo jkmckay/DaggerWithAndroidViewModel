@@ -1,12 +1,12 @@
 # DaggerWithAndroidViewModel
 
-The following presumes a familiarity of Android Architecture components in addition to Dagger2
+The following presumes a familiarity with Android Jetpack's ViewModel.
 
 Note: This project contains two modules(project modules, not dagger modules): `DaggerCore` and `DaggerStandard`. `DaggerStandard` is best used with this readme and illustrates how Dagger works and how to use it. `DaggerCore` in constrast shows the cutdown version using the new DaggerAndroidCore classes: `DaggerApplication`, `DaggerActivity` , `DaggerFragment`, etc which cuts out boilerplate code even further, but provides less insight for new users.
 
 #### Modules:
 
-Module classes denote what it is you're injecting and are essentially made up of a number of  "provide methods" that create and return the dependency to be injected. To create a module class one simply annotates with `@Module` or if submodules are to be included, you can include them like so:
+Module classes denote what it is you're injecting and are essentially made up of a number of  "provide methods" that create and return the dependency to be injected. To create a module class one simply annotates the class with `@Module` or if submodules are to be included, you can include them like so:
 
 ```kotlin
 @Module(includes = [SubModule::class])
