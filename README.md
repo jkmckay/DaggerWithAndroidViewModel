@@ -125,8 +125,8 @@ Now dependencies can be injected without caring how they are satisfied as this w
 - AppComponent
   - AppModule
   - ActivityModule
-    - MainActivityModule (annotated with @ContributesAndroidInjecto)
-    - DetailActivityModule (annotated with @ContributesAndroidInjecto)
+    - MainActivityModule (annotated with @ContributesAndroidInjector)
+    - DetailActivityModule (annotated with @ContributesAndroidInjector)
   - AndroidInjectionModule
 
 Additionally Using `DaggerApplication` and its associated classes further removes the need from boilerplate, especially from the Application class. as can be seen in the DaggerCore module.
